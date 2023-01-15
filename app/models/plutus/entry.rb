@@ -47,7 +47,7 @@ module Plutus
     # attr_accessible :credits, :debits
 
     def default_date
-      todays_date = ActiveRecord.default_timezone == :utc ? Time.now.utc : Time.now
+      todays_date = ActiveRecord.default_timezone == :utc ? Time.now.utc.to_date : Date.today
       self.date ||= todays_date
     end
   
